@@ -45,7 +45,6 @@
 	}
 	#hidebtn{
 		height:30px;
-/* 		padding: 3px 10px; */
 	}
 
 
@@ -65,10 +64,7 @@
 			<H1> 문의글 리스트</H1>
 			<hr>
 			<div id="list">		
-	
 			<table id="board_all"></table>			
-<!-- 			<div id="searchBox"></div> -->
-			
 			</div>
 		
 			
@@ -107,7 +103,6 @@
 	
 	            <input type="hidden" name="u_idx" id="eu_idx" value="${loginInfo.u_idx}">
 	            
-	          		 <!--  <input type="hidden" name="q_num" id="q_num" value="32"> -->
 				<table id=editTable class="table">
 					<tr>					
 						<td id="title">글번호</td>
@@ -133,13 +128,7 @@
 	
 	      
       
-      
-      
-      
-      
-      
-      
-      
+
 	 <!-- 문의글 상세보기 -->
 	 <div id="detailFrame" class="container table-responsive" style="display: none">
 		     <div class="page-header">
@@ -150,12 +139,9 @@
         	  <hr> 
         	
         	<form id="detailForm" onsubmit="return false;">
-        	<!-- <div class="card"> -->
 	        	<div class="row">
 		         <div class="form-group">
-	            <input type="hidden" name="u_idx" id="u_idx" value="${loginInfo.u_idx}">
-	            <!-- <input type="hidden" name="q_num" id="dq_num"> -->
-	            
+	           		 <input type="hidden" name="u_idx" id="u_idx" value="${loginInfo.u_idx}">	            
 		            <table id=detailTable class="table">
 						<tr>
 							<td id="title">글번호</td>
@@ -172,10 +158,8 @@
 				        <tr>
 				            <td id="title"> 내 용</td>
 				            <td><textarea name="q_content" id="dq_content" class="form-control" cols="70" rows="15" readonly ></textarea></td>     				        	
-				        </tr>
-			        
-		    		</table> 
-		    		 
+				        </tr>			   
+		    		</table> 		    		 
 	    		</div>
 	    		</div>
     		</form>
@@ -198,15 +182,12 @@
 
 		
 				list();		
-				
+			
 				/* 상세보기 접기 버튼 */
 				$(hidebtn).click(function(){
 					$(detailFrame).hide();
 				});
-				
-
-				
-				
+		
 		});
 		    
 
@@ -219,9 +200,8 @@
 
  function list(pgNum){
 			
-			//alert(num);
+			
 			$.ajax({
-				//url : 'http://localhost:8080/runbike/rest/board/list',
 				url : './rest/board/list',
 				type : 'GET',
 				data : {page:pgNum, stype:$('#stype').val(), keyword:$('#keyword').val()},
@@ -302,25 +282,10 @@
 		               
 		                
 					}
-						
-
-					      
-// 					      html += '<tr>';
-// 					      html += '<div class="searchBox">';
-// 					      html += '<form id="searchBox">';
-// 					      html += '<select name="stype"><option value="q_title">제목</option><option value="q_writer">작성자</option></select>';
-// 					      html += '<input type="text" name="keyword">';
-// 					      html += '<input type="submit" value="검색" href="#" onclick="list('+pgNum+')">';				
-// 					      html += '</form>';
-// 					      html += '</div>';
-// 					      html += '</tr>';
 					      
 						  html +='</table>';	 
 					      table.html(html);
-					      
-					     
-
-							html +='</div>';
+						  html +='</div>';
 							
 						var paging = '';
 						
@@ -330,9 +295,7 @@
 							paging += '<li class="page-item"><a class="page-link" href="#" onclick="list('+j+')">'+j+'</a></li>';
 
 						
-						}
-						
-					
+						}					
 						$('#list').html(html);
 						$('.pagination').html(paging);
 						
@@ -348,17 +311,14 @@
 	    function editPreSet(q_num){
 
 	        disNone();
-	        
-	       // alert($('#eu_idx').val());
+
 	        
 	        $('#editFrame').css('display', 'block');
 	        
-	           $.ajax({
-	                //url : 'http://localhost:8080/runbike/rest/board/'+q_num,
+	           $.ajax({	           
 	                url : './rest/board/'+q_num,
 	                type : 'GET',
-	                success : function(data){
-	                  	//$('#eu_idx').val(u_idx);   //바뀌는 값이 아니므로, 한번 더 바꿔줬기때문에 중복으로 오류가 뜸
+	                success : function(data){	            
 	                    $('#eq_num').val(q_num);
 	                    $('#eq_writer').val(data.q_writer);
 	                    $('#eq_title').val(data.q_title);
@@ -377,8 +337,7 @@
 		  		var q_content = $('#eq_content').val();
 		  		var u_idx = $('#eu_idx').val();
 		  			        
-	         $.ajax({
-	             //url : 'http://localhost:8080/runbike/rest/board/'+q_num,
+	         $.ajax({	          
 	             url : './rest/board/'+q_num,
 	             type : 'POST',
 	             data : {u_idx:u_idx, q_num:q_num, q_writer:q_writer, q_title:q_title, q_content:q_content},   
@@ -418,23 +377,7 @@
 					}
 				}
 			}
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+
 	  
 	  
 	  
@@ -467,9 +410,6 @@
 			html += '<td><textarea class="form-control"  placeholder="내용을 입력하세요." required id="rp_text" name="rp_text"></textarea></td>'
 			html += '</tr>';
 			html += '<tr>';
-
-// 			html += '<td><input type="submit" class="btn btn-primary" value="작성완료" onclick="submitForm('+q_num+')"></td>';
-// 			html += '<td><button class="btn btn-secondary" onclick="cancelwrite('+q_num+')">작성 취소</button></td>';
 			html += '</tr>';
 			html += '</table>';
 			html += '<input type="submit" class="btn btn-primary btn-block" value="작성완료" onclick="submitForm('+q_num+')">';
@@ -517,7 +457,6 @@
 			    
 			        $.ajax({
 			            type : 'POST',
-			            //url : 'http://localhost:8080/runbike/rest/reply',
 			            url : './rest/reply',
 			            enctype: 'multipart/form-data',
 			            contentType : false,
@@ -539,12 +478,9 @@
 		
 			
 			//답글리스트
-			function getreplylist(q_num){
-			        
-			    	//alert('글번호 :'+q_num);
+			function getreplylist(q_num){			      
 			    	
 			    	$.ajax({
-						//url : 'http://localhost:8080/runbike/rest/reply/reply/'+q_num,
 						url : './rest/reply/reply/'+q_num,
 						type : 'GET',
 						success : function(data){
@@ -553,9 +489,8 @@
 			                var html = '';
 								html +='<button class="btn btn-outline-secondary float-left" id="replyhidebtn" onclick="hidebox('+q_num+')">리스트 접기</button>';
 			                for(var i=0; i<data.length;i++){
-			                	//html += '<div class="card">\n';
 			                	html +='<div class="container table-responsive">';
-			                	 html += '<div id="writeBox'+q_num+'" class="row" style="display:block;">';
+			                	html += '<div id="writeBox'+q_num+'" class="row" style="display:block;">';
 								html +='<table class="table" width="800" border="3" align="center">';
 
 			                	 html += '<tr>';
@@ -571,27 +506,16 @@
 			                	 html += '<tr>';
 			                	 html += '<td id="text" style="font-weight:bold">내용</td>';     
 			                	 html += '<td colspan=5>' + data[i].rp_text +'</td>';		
-			                	 html += '</tr>';
-			                	 
-// 			                	 html += '<tr>';
-// 			                	 html += '<td id="title" style="font-weight:bold">원글번호</td>';
-// 			                	 html += '<td>' + data[i].q_num +'</td>';	
-// 			                	 html += '<td id="title" style="font-weight:bold">답글번호</td>';
-// 			                	 html += '<td>' + data[i].rp_num +'</td>';	
+			                	 html += '</tr>';	
 								if(${loginInfo.u_id == 'admin'}){
 			                	 html += '<button class="btn btn-outline-secondary float-right" onclick="delreply('+ data[i].rp_num +')">삭제하기</button>';
 								}
-// 			                	 html +='</tr>';
-			                	 html += '</div>';
-			                	 html += '<br>';
-			                	 html += '</div>';
-			                	
-			                	// html += '</div>';
-			                	
-			                }
-			     
-			                $('#getreplylist'+q_num).html(html);
-			                
+			                    html += '</div>';
+			                	html += '<br>';
+			                	html += '</div>';
+			               	
+			                }			     
+			                $('#getreplylist'+q_num).html(html);			                
 							  }else{
 							        alert("답글이 없습니다.");
 							       }
@@ -611,35 +535,7 @@
 				}
 			}
 			
-			
 
-// 			function displayReplylistBox(q_num){
-
-
-// 				if ($("#replylist_Box_Div"+q_num+":hidden")){
-
-// 				        $("#replylist_Box_Div"+q_num).show();
-// 				        $('#listbtn').text('접기'); 
-				       
-
-// 				}
-// 				else if($("#replylist_Box_Div"+q_num+":visible")){
-
-// 				        $("#replylist_Box_Div"+q_num).hide(); 
-// 				        $('#listbtn').text('답글보기'); 
-// 				}
-// 				}
-			
-
-			
-			
-
-			
-			
-		
-	        
-			
-			
 			
 			//게시글 상세보기(내용까지 보이도록)
 			function detaildata(q_num){
@@ -649,7 +545,6 @@
 				$('#detailFrame').css('display','block');
 					
 					$.ajax({
-						//url : 'http://localhost:8080/runbike/rest/board/detail/'+q_num,
 						url : './rest/board/detail/'+q_num,
 						type : 'GET',
 						 success : function(data){
@@ -658,18 +553,15 @@
 			                    $('#dq_title').val(data.q_title);
 			                    $('#dq_content').val(data.q_content);
 			                    $('#dregdate').val(data.regdate);
-			                }
-					
-					});
-										
+			                }				
+					});									
 			}
 			
 			
 
 		   
 		  
-		  function disNone() {
-		    	
+		  function disNone() {		    	
 		    	 $('#editFrame').css('display', 'none');
 		    	 $('#detailFrame').css('display', 'none');
 		    	 $('#replyFrame').css('display', 'none');
@@ -683,7 +575,6 @@
 		        
 		        if(confirm('정말 삭제하시겠습니까?')){
 		           $.ajax({
-		                //url : 'http://localhost:8080/runbike/rest/board/del/'+q_num,
 		                url : './rest/board/del/'+q_num,
 		                type : 'DELETE',
 		                success : function(data){
@@ -702,7 +593,8 @@
 		           }
 		    }
     
-               
+    
+		  
 		//답글삭제(답글 글 번호로)
 		function delreply(rp_num){
 			
@@ -710,7 +602,6 @@
 			
 			if(confirm('정말 삭제하시겠습니까?')){
 		           $.ajax({
-		                //url : 'http://localhost:8080/runbike/rest/reply/del/'+rp_num,
 		                url : './rest/reply/del/'+rp_num,
 		                type : 'DELETE',
 		                success : function(data){
@@ -720,8 +611,7 @@
 		                        list();
 		                    }          
 		                }
-		            });
-		           	           
+		            });	           	           
 		           }
 		    }
 

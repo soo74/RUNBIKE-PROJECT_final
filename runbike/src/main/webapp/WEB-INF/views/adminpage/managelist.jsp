@@ -29,30 +29,13 @@
 	
 	div#pagingBox {	
 		overflow: hidden;
-		/* margin-top:15px; */
-		/* margin : 15px 1000px; */
 	}
 	div#pagingBox>div {
 		float: left;
 		width: 30px;
 	
 	}
-	
-/* 	div.searchBox { */
-/* 		margin : 15px 243px; */
-/* 		width : 500px; */
-/* 		padding : 15px; */
-/* 	} */
 
-	.container {
-	/*width:1000px;*/
-/*   margin-right: auto; */
-/*   margin-left: auto; */
-}
-	
-
-
-	
 </style>
 </head>
 <body>
@@ -166,14 +149,12 @@ function del(u_idx){
     
     if(confirm('정말 삭제하시겠습니까?')){
        $.ajax({
-            //url : 'http://localhost:8080/runbike/rest/admin/'+u_idx,
             url : '../rest/admin/'+u_idx,
             type : 'DELETE',
             success : function(data){
          
                 if(data=='SUCCESS'){
                     alert('삭제가 완료되었습니다');
-                   // location.href= 'http://localhost:8080/runbike/adminpage/managelist';
                     location.href= '../adminpage/managelist';
                 }          
             }

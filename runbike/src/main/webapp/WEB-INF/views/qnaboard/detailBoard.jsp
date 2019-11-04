@@ -28,15 +28,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 </head>
 <body>
 
@@ -55,15 +46,12 @@
 	     	<h1>문의글 상세보기</h1>
 			</div>
 
-	     <!-- 파일 업로드 기능을 구현할 시에는 <form> 태그안에 반드시  enctype="multipart/form-data"를 작성해주어야 하고, 용량이 크기 때문에 method는 반드시 post로 작성해야 합니다. -->
-	     <form id="detailForm" method="post" onsubmit="return false;" >           <!-- action="qnaboard/writepro" -->
-	            	<!-- user테이블의 u_idx를 임의 지정 -->
-	   		
+	     <form id="detailForm" method="post" onsubmit="return false;" > 
+	               		
 	          <input type="hidden" name="u_idx" id="u_idx" class="form-control" value="${detailData.u_idx}" readonly/>   
 	           
 
 	       <table id=detailTable class="table">
-		       
 		       <tr>
 		            <td id="title">글번호</td>
 		             <td> <input type="text" name="q_num" id="q_num" class="form-control" value="${detailData.q_num}" readonly/></td>    
@@ -79,42 +67,15 @@
 	       			 <td> <textarea name="q_content" id="q_content" class="form-control" cols="70" rows="15" readonly>${detailData.q_content}</textarea></td>
 	       		</tr>
    			 </table>    
-    		</form>
+    	</form>
 
 
       		</div>
-      		
-      		
-      		
-      		
-      		
-      		
-      		
-      		
-    
-
-
 
 
 <!-- 푸터 시작 -->
 <%@ include file="/WEB-INF/views/frame/footer.jsp" %>
 <!-- 푸터 끝 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

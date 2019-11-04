@@ -36,9 +36,6 @@
 		margin:auto;
 		float:center;
 	}
-/* 	div#form-group{ */
-/* 		width:400px; */
-/* 	} */
     
 
     </style>
@@ -55,22 +52,14 @@
 
 
 
-
-
-
-
-
 <div id="boardwriteform">
 			<div class="page-header">
 		
 	     	<h1>문의글 작성</h1>
 			</div>
-			<hr>
-
-	     <!-- 파일 업로드 기능을 구현할 시에는 <form> 태그안에 반드시  enctype="multipart/form-data"를 작성해주어야 하고, 용량이 크기 때문에 method는 반드시 post로 작성해야 합니다. -->
-	     <form id="regform" method="post" onsubmit="return false;" >           <!-- action="qnaboard/writepro" -->
-	            	<!-- user테이블의 u_idx를 임의 지정 -->
-	          <input type="hidden" value="${loginInfo.u_idx}" name="u_idx" id="u_idx">
+			<hr>    
+	     <form id="regform" method="post" onsubmit="return false;" > 
+	           <input type="hidden" value="${loginInfo.u_idx}" name="u_idx" id="u_idx">
 	           <input type="hidden" name="q_num" id="q_num" value="1">
 	       <table id=writeTable class="table">
 		       	<tr>
@@ -93,18 +82,15 @@
 	       			 <td> <textarea name="q_content" id="q_content" class="form-control" cols="70" rows="15" placeholder="내용을 입력하세요" required></textarea></td>
 	       		</tr>
 		         <tr>
-				  <td>&nbsp;</td>
-		          <td>
-		          <input id="writebtn" type="submit" class="btn btn-primary" value="등록" onclick="formSubmit();">
-		          <input id="canclebtn" type="submit"  class="btn btn-secondary" value="취소" onclick="cancelwrite();">
-		          </td>
-		        </tr>
-	    
-   			 </table>    
-    		</form>
-
-
-      		</div>
+					  <td>&nbsp;</td>
+			          <td>
+			          <input id="writebtn" type="submit" class="btn btn-primary" value="등록" onclick="formSubmit();">
+			          <input id="canclebtn" type="submit"  class="btn btn-secondary" value="취소" onclick="cancelwrite();">
+			          </td>
+		        </tr>    
+   		    </table>    
+    	</form>
+</div>
 
 	    
 
@@ -121,7 +107,7 @@
  
 
 
-    <script>
+<script>
 
 
          $(document).ready(function() {
@@ -133,10 +119,7 @@
         
         
 	  function formSubmit() {
-	        	
-	        	
-	       
-	        	
+	        		
 	            var formData = new FormData();
 	            formData.append('u_idx', $('#u_idx').val());
 	            formData.append('q_num', $('#q_num').val());
@@ -144,9 +127,7 @@
 	            formData.append('q_title', $('#q_title').val());
 	            formData.append('q_content', $('#q_content').val());
 	          
-	            //alert($('#regform').serialize());
 	            
-
 	        	if($("#q_title").val() == ""){
 	        		  alert("제목을 입력해주세요.");
 	        		  $("q_title").focus();
@@ -160,7 +141,6 @@
 	        	}        
 	            
 	            $.ajax({
-	                //url: 'http://localhost:8080/runbike/board/writeform',
 	                 url: '../board/writeform',
 	                type: 'POST',
 	                processData: false,  
@@ -168,9 +148,7 @@
 	                data: formData,
 	                success : function(data){
 	
-
 	                	 alert("글 등록이 완료되었습니다");
-	                 	//location.href= 'http://localhost:8080/runbike/qnaboard';
 	                	 location.href= '../board/boardlist';
 	                }
 	                
@@ -192,11 +170,8 @@
 				}				
 			}
 		}
-		
-        
-
-        
-    </script> 
+		    
+</script> 
 
 
 

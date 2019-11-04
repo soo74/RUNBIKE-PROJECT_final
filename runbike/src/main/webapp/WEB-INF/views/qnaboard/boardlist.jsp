@@ -23,29 +23,15 @@
 	div#sub{
 		text-align:right;
 	}
-
 	table {
-/* 		border-collapse: collapse; */
-/* 		border: 0;	 */
-/* 		margin: auto; */
 		table-layout:fixed;
 		word-break:break-all;
 	}
-/* 	td { */
-/* 		padding : 3px 10px;		 */
-/*         height:50px; */
-
-/* 	} */
-	
 	#searchBox{
 		display: inline-block;
 	}
-	
-	
 	div#pagingBox {	
 		overflow: hidden;
-		/* margin-top:15px; */
-		/* margin : 15px 1000px; */
 	}
 	div#pagingBox>div {
 		float: left;
@@ -152,26 +138,11 @@
 
 
 
-
-
-
 <script>
 
 
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>
