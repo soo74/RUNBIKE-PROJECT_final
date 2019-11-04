@@ -50,19 +50,6 @@ public class RequestMemberWrite {
 	public void setQ_content(String q_content) {
 		this.q_content = q_content;
 	}
-
-
-	  
-	
-
-
-	/*
-	 * public Message toMessage() { Message message = new
-	 * Message(0,u_idx,q_title,q_content, q_writer,null); return message; }
-	 */
-	 
-
-
 	
 	public Message toMessage() { 
 		  Message message = new Message(q_num,u_idx,q_title,q_content, q_writer,null);

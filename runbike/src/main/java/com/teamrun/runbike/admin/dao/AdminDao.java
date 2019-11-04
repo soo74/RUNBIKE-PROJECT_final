@@ -14,14 +14,10 @@ public interface AdminDao {
 
 		// 회원의 전체 리스트 
 		public List<UserInfo> selectAllListAdmin();
-		
-		
+				
 		//회원행 총 갯수
 		public int selectTotalCount(SearchParam searchParam);
 		//회원 총 리스트(페이징)
 		public List<UserInfo> selectList(Map<String, Object> params);
-		
-	
-
 	
 }

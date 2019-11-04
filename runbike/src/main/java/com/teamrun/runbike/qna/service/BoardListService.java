@@ -82,14 +82,7 @@ public class BoardListService implements BoardService{
 	
 }
 		
-		
-		
-	
-		
-	
-	
-	
-	
+
 	
 	//게시글 전체리스트 출력 
 	public List<Message> getAllList(){
@@ -101,20 +94,6 @@ public class BoardListService implements BoardService{
 		return list;
 		
 	}
-	
-	
-	
-	/*
-	 * 
-	 * //답글+게시글 리스트 public List<Message> replyList(){
-	 * 
-	 * dao = template.getMapper(BoardDaoInterface.class);
-	 * 
-	 * List<Message> list = dao.replyList(); return list; }
-	 * 
-	 */
-
-	
 	
 	
 

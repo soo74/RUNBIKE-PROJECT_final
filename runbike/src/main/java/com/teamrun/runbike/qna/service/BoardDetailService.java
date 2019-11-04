@@ -10,21 +10,15 @@ import com.teamrun.runbike.qna.domain.Message;
 
 @Service("detailService")
 public class BoardDetailService {
-	
-	
+		
 	private BoardDaoInterface dao;
 	@Inject
 	private SqlSessionTemplate template;
 
-
 	public Message getDetaildata(int q_num) {
-		
-
-		
+				
 		dao = template.getMapper(BoardDaoInterface.class);
-		
 		Message message = dao.detail(q_num);
-		
 		return message;
 	}
 

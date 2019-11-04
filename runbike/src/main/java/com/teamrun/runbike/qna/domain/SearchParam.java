@@ -3,7 +3,7 @@ package com.teamrun.runbike.qna.domain;
 
 public class SearchParam {
 	
-	// 타입명
+	// 검색타입명
 	private String stype;
 	private String keyword;
 	
@@ -35,12 +35,6 @@ public class SearchParam {
 		return "SearchParam [stype=" + stype + ", keyword=" + keyword + "]";
 	}
 
-	
-	
-	
-	
-	
-	
-	
+
 	
 }

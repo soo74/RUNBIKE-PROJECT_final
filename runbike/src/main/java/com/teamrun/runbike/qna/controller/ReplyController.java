@@ -64,7 +64,6 @@ public class ReplyController {
 	}
 	
 	
-
 	
 	
 	/* 답변글 삭제 */
@@ -75,11 +74,6 @@ public class ReplyController {
 
 	}
 
-	
-	
-	
-	
-	
-	
+
 	
 }
