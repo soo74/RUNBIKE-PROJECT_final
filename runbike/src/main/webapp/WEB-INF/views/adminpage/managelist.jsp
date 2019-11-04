@@ -19,23 +19,17 @@
 	h1{
 		text-align:center;
 	}
-
 	table {
 		table-layout:fixed;
 		word-break:break-all;
-	}
-
-
-	
+	}	
 	div#pagingBox {	
 		overflow: hidden;
 	}
 	div#pagingBox>div {
 		float: left;
-		width: 30px;
-	
+		width: 30px;	
 	}
-
 </style>
 </head>
 <body>
@@ -141,9 +135,6 @@
 
 <script>
 
-
-
-
 //삭제
 function del(u_idx){
     
@@ -161,28 +152,9 @@ function del(u_idx){
         });
        
        }
-	
-	
-	
 }
 
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>
