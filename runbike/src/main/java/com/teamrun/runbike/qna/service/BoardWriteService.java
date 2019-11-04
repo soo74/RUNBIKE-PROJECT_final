@@ -13,13 +13,10 @@ import com.teamrun.runbike.qna.domain.RequestMemberWrite;
 @Service("writeService")
 public class BoardWriteService implements BoardService {
 	
-
 	@Autowired
 	private SqlSessionTemplate template;
 	
-	private BoardDaoInterface dao;
-	
-	
+	private BoardDaoInterface dao;	
 	
 	//게시글 입력
 	public int write(RequestMemberWrite regRequest) {
@@ -31,8 +28,6 @@ public class BoardWriteService implements BoardService {
 		return rCnt;	
 		
 	}
-
-
 }
 
 

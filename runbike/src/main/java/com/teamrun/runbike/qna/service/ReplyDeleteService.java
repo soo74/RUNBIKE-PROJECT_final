@@ -20,7 +20,6 @@ private BoardDaoInterface dao;
 	public int ReplyDelete(int rp_num) {
 		
 		dao = template.getMapper(BoardDaoInterface.class);
-		
 		return dao.replyDelete(rp_num);
 	}
 	

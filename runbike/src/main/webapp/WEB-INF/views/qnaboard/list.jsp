@@ -15,40 +15,32 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="<c:url value='/assets/css/layout.css'/>">
-    <style>
+<style>
 	h1{
 		text-align:center;
 	}
-	
-
 	table {
 		table-layout:fixed;
 		word-break:break-all;
-	}
-
-	
+	}	
 	#paging{
 		width:80px;
 		float:left;
-	}
-	
+	}	
 	#detailFrame,#editFrame{
 		text-align:center;
 		
 	}
 	#detailForm,#editForm{
 		display: inline-block;
-	}
-	
+	}	
 	#editbtn{
 		margin:auto;
 	}
 	#hidebtn{
 		height:30px;
 	}
-
-
-    </style>
+</style>
 </head>
 <body>
 
@@ -84,12 +76,7 @@
  
 		  
 		  
-		  
 
-	
-	
-
-      
       
      <!-- 문의글 수정 폼 --> 	
 	<div id="editFrame" class="container table-responsive" style="display: none" >
@@ -212,11 +199,9 @@
 					var table = $('#board_all');
 					html +='<div class="container table-responsive">';
 					html +='<table class="table table-sm">'
-
 					html +='<tr class="table-primary">';
 					html +='<td style="width:8%">글번호</td>';
 					html +='<td style="width:20%">제목</td>';
-// 					html +='<td>idx</td>';
 					html +='<td style="width:10%">작성자</td>';
 					html +='<td style="width:10%">작성일</td>';
 					html +='<td style="width:10%">수정</td>';
@@ -245,7 +230,6 @@
 						html += '<tr>';
 						html += '<td>'+q_num+'</td>';
 						html += '<td><a onclick="detaildata('+q_num+')" style="font-weight:bold;text-decoration:underline;font-size:18px;">'+q_title+'</a></td>';
-// 						html += '<td>'+u_idx+'</td>';
 						html += '<td>'+q_writer+'</td>';
 						html += '<td>'+regdate+'</td>';
 						

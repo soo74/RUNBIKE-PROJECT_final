@@ -13,15 +13,11 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="<c:url value='/assets/css/layout.css'/>">
-    <style>
-
-
+<style>
 
 	td{
 	white-space: nowrap;
 	}
-
-
 
 </style>
 
@@ -35,9 +31,6 @@
 <!-- 해더 시작 -->
 <%@ include file="/WEB-INF/views/frame/header.jsp" %>
 <!-- 해더 끝 -->
-
-
-
 
 
 <div id="detailFrame" class="container table-responsive">

@@ -17,19 +17,13 @@ public class ReplyListService implements BoardService{
 	private SqlSessionTemplate template;
 	
 	private BoardDaoInterface dao;
-
-	
-	
 	
 	//답변글 리스트
 	public List<Reply> replyListData(int q_num){
 		
-		dao = template.getMapper(BoardDaoInterface.class);
-		
-		List<Reply> list = dao.selectReplyListAll(q_num);
-		
-		System.out.println("답변리스트 서비스:"+list);
-		
+		dao = template.getMapper(BoardDaoInterface.class);		
+		List<Reply> list = dao.selectReplyListAll(q_num);		
+		System.out.println("답변리스트 서비스:"+list);		
 		return list;
 	}
 	

@@ -37,10 +37,7 @@
 		float: left;
 		width: 30px;	
 	}
-	
 
-
-	
 </style>
 </head>
 <body>
